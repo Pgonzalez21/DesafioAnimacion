@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.grid_container{
+    display: grid;
+    min-height: 100vh;
+    width: 100%;
+    grid-template-columns: 1fr;
+    grid-template-rows: 40px 40px 1fr 30px;
+    grid-template-areas: 
+    "header"
+    "nav"
+    "main"
+    "footer";
+    
+}
+
+.header{
+    grid-area: header;
+    background-color: aqua;
+}
+
+.nav{
+    grid-area: nav;
+    background-color: azure;
+}
+
+.main{
+    grid-area: main;
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fill,
+        minmax(300px, 1fr)
+    );
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-self: center;
+    align-self: center;
+    align-items: center;
+}
+
+.main .container_card{
+    max-height: max-content;
+    max-width: max-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+
+.main .container_card .container_img{
+    height: 90%;
+    width: 90%; 
+    object-fit: cover;  
+    display: flex;
+    justify-content: center;
+   
+
+}
+
+.main .container_card .container_img img{
+    object-fit: cover;
+    height: 90%;
+    width: 100%;
+    
+}
+
+.main .container_card .description_card{
+    text-align: center;
+}
+
+@media (width > 576px){
+    .grid_container{
+        grid-template-columns:200px 1fr;
+        grid-template-rows: 50px 1fr 1fr 30px;
+        grid-template-areas: 
+        "header header"
+        "nav main"
+        "nav main"
+        "footer footer";
+         
+
+    }
+
+    .main{
+        grid-area: main;
+        display: grid;
+        grid-template-columns: repeat(
+            auto-fill,
+            minmax(300px, 1fr)
+        );
+        grid-template-rows: 1fr 1fr 1fr;
+        justify-self: normal;
+        /* align-self: center;
+        align-items: center; */
+        row-gap: 10px;
+        column-gap: 10px;
+    }
+    
+}
+
+
+.footer{
+    grid-area: footer;
+    background-color: yellowgreen;
+}
