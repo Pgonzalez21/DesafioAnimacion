@@ -18,15 +18,45 @@
     
 }
 
+/* Header */
 .header{
     grid-area: header;
     background-color: aqua;
 }
 
+
+/* Nav */
+
+
 .nav{
     grid-area: nav;
     background-color: azure;
 }
+
+.nav .menu{
+    height: 8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;       
+    padding-top: 100px;
+   
+}
+
+.nav .menu ul{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.nav .menu li{
+    display: flex;
+    padding-top: 20px;
+    
+}
+
+
+/* Main */
 
 .main{
     grid-area: main;
@@ -73,6 +103,14 @@
     text-align: center;
 }
 
+.section{
+        
+    grid-column: 1/-1;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    
+}
+
 @media (width > 576px){
     .grid_container{
         grid-template-columns:200px 1fr;
@@ -94,12 +132,18 @@
             auto-fill,
             minmax(300px, 1fr)
         );
-        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-rows: 0.5fr 1fr 1fr;
         justify-self: normal;
-        /* align-self: center;
-        align-items: center; */
         row-gap: 10px;
         column-gap: 10px;
+        
+    }
+
+    .section{
+        
+        grid-column: 1/-1;
+        margin-top: 70px;
+        margin-bottom: 80px;
         
     }
     
