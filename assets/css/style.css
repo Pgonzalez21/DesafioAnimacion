@@ -2,6 +2,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Urbanist', sans-serif;
+    color: black;
+    
+}
+
+h1{
+    font-size: 24px;
 }
 
 .grid_container{
@@ -9,7 +16,7 @@
     min-height: 100vh;
     width: 100%;
     grid-template-columns: 1fr;
-    grid-template-rows: 80px 1fr 50px;
+    grid-template-rows: 100px 1fr 50px;
     grid-template-areas: 
    
     "nav"
@@ -18,49 +25,72 @@
     
 }
 
-/* Header */
-/* .header{
-    grid-area: header;
-    background-color: aqua;
-} */
-
 
 /* Nav */
 
 
 .nav{
     grid-area: nav;
-    /* border: solid 1px black; */
+    
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
     
     
     
 }
 
+.nav .logo{
+    display: flex;
+    justify-content: start;
+    height: 80%;
+    width: 30%;
+    
+}
+
+.nav .logo img{
+    height: 100%;
+    object-fit: cover;
+}
+
 .nav .menu{
-    height: 20%;
+    height: 100%;
     width: 100%;
-    /* display: flex; */
-    flex-direction: column;
+    display: flex;
+    flex-direction: row;
     justify-content: center;
-    align-items: center;       
-    padding-top: 100px;
-    padding-left: 20px;
+    align-items: flex-end ;
+    margin: 2px;
+   
 }
 
 .nav .menu ul{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
     
+    
+}
+
+.nav .menu .lista{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: flex-end;
 }
 
 .nav .menu li{
     display: flex;
-    padding-top: 20px;
+}
+
+.nav .menu .lista  a{
+    display: flex;
+    padding-top: 10px;
+    text-decoration: none;
     
 }
+
 
 
 /* Main */
@@ -125,11 +155,13 @@
     display: flex;
     width: 100px;
     height: 30px;
-    background-color: rgb(146, 145, 211);
-    color: rgb(217, 220, 223);
+    border-radius: 10px;
+    background-color: #B8860B;
+    color: black(217, 220, 223);
     justify-content: center;
     align-items: center;
     text-decoration: none;
+    font-weight: bold;
     
 } 
 
@@ -154,10 +186,8 @@
 @media (width > 576px){
     .grid_container{
         grid-template-columns:250px 1fr;
-        grid-template-rows:  50px 1fr 30px;
-        grid-template-areas: 
-        /* "nav main" */
-        "header header"
+        grid-template-rows:   1fr 50px;
+        grid-template-areas:                
         "nav main"
         "footer footer";
         row-gap: 10px;
@@ -179,46 +209,92 @@
         
     }
 
-    .section{
-        
-        justify-self: center;
-        align-self: center;
-        grid-column: 1/-1;
-        margin-top: 70px;
-        margin-bottom: 80px;
-        
-    }
 
     .nav{
         display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+       
+                
+    }
+
+    .nav .logo{
+        display: flex;
         justify-content: center;
-        align-items: flex-end;
-        position: fixed;
-
-        
-
+        align-items: center;
+        height: 10%;
+        width: 100%;
         
         
+        
+    }
+    
+    .nav .logo img{
+        height: 90%;
+        width: 90%;
+        object-fit: cover;
     }
 
     .nav .menu {
-        height: 20%;
+        height: 10%;
         width: 100%;
-        /* display: flex; */
         flex-direction: column;
         justify-content: center;
         align-items: center;       
-        padding-top: 100px;
         padding-left: 20px;
-        
+    
     }
 
+    .nav .menu .lista{
+        display: flex;
+        justify-content: center;
+        align-items: center;        
+        width: 60%;
+       
+    }
 
+    .nav .menu ul{
+        display: flex;
+        flex-direction: column;
+                
+        
+    }
+    
+    .nav .menu a{
+        text-decoration: none;       
+        font-size: 24px;
+               
+    }
     
 }
 
 
+
+
+/* Footer */
+
 .footer{
     grid-area: footer;
-    background-color: yellowgreen;
+   
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+   
+}
+
+.footer .contacto{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-left: 20px;
+    
+}
+
+.footer .iconos{
+    width: 150px;
+    display: flex;
+    justify-content: space-around;
 }
